@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header color-iwell-purple fw-bold bg-secondary">
+    Battery status
+  </div>
+  <div class="card-body">
+    <div *ngIf="availableDischargePowerKw !== undefined">
+      <span>
+        {{
+          availableDischargePowerKw > 100
+            ? "Available"
+            : availableDischargePowerKw > 50
+            ? "Partially available"
+            : "Not available"
+        }}
+      </span>
+      <span>{{ availableDischargePowerKw }} kW</span>
+    </div>
+  </div>
+</div>

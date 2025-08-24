@@ -1,0 +1,28 @@
+<div class="row mt-5 gx-5">
+  <div class="col-md-4">
+    <app-battery-status
+      [availableDischargePowerKw]="batteryStatus?.availableChargePowerKw"
+    ></app-battery-status>
+  </div>
+  <div class="col-md-4">
+    <app-battery-capacity
+      [chargeCapacityRemainingKwh]="batteryStatus?.chargeCapacityRemainingKwh"
+      [dischargeCapacityRemainingKwh]="
+        batteryStatus?.dischargeCapacityRemainingKwh
+      "
+    ></app-battery-capacity>
+  </div>
+  <div class="col-md-4">
+    <app-battery-power
+      [batteryPowerKw]="batteryStatus?.batteryPowerKw"
+    ></app-battery-power>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col">
+    <app-battery-chart
+      [telemetry]="batteryTelemetry"
+      (timeframeChange)="onTimeframeChange($event)"
+    ></app-battery-chart>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="card">
+  <div
+    class="card-header d-flex justify-content-between align-items-center bg-secondary"
+  >
+    <span class="color-iwell-purple fw-bold">Power</span>
+    <div>
+      <button
+        class="btn btn-sm btn-iwell-green"
+        (click)="changeTimeframe(Timeframe.Hour)"
+      >
+        Hour
+      </button>
+      <button
+        class="btn btn-sm btn-iwell-green mx-3"
+        (click)="changeTimeframe(Timeframe.Day)"
+      >
+        Day
+      </button>
+      <button
+        class="btn btn-sm btn-iwell-green"
+        (click)="changeTimeframe(Timeframe.Month)"
+      >
+        Month
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <div id="chart">
+      <ng-container *ngIf="telemetry?.series?.length; else loading">
+        <apx-chart
+          [series]="chartOptions.series!"
+          [chart]="chartOptions.chart!"
+          [xaxis]="chartOptions.xaxis!"
+          [tooltip]="chartOptions.tooltip!"
+        >
+        </apx-chart>
+      </ng-container>
+
+      <ng-template #loading>
+        <p class="text-center">Loading chart...</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

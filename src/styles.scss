@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Your variable overrides
+$secondary: #f1f1f1;
+// more overrides...
+
+// Import Bootstrap's source Sass files
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.btn-iwell-green {
+  background-color: #cfff00;
+  color: #2e103b;
+
+  &:hover,
+  &:focus {
+    background-color: darken(#cfff00, 5%);
+  }
+}
+
+.color-iwell-purple {
+  color: #2e103b;
+}
